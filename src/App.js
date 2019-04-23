@@ -1,7 +1,9 @@
 import React, { Component} from 'react';
 import './App.css';
 import dog from "./dogs.json";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./components/Navbar";
+import Wrapper from "./components/Wrapper"
+import Card from "./components/Card"
 
 
 class App extends Component {
@@ -12,11 +14,18 @@ class App extends Component {
   };
   render() {
     return (
-      <div className="App">
-      <Navbar>
-      score={this.state.score}
-      </Navbar>
-     
+      <div>
+        <Navbar>
+        score={this.state.score}
+        </Navbar>
+      <Wrapper>
+        {/* {this.state.dogs} */}
+          <Card
+          id={dog.id}
+          image={dog.image}
+          />
+        
+      </Wrapper>
   
         
      
